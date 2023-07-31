@@ -5,14 +5,12 @@ import com.example.cursovaya2.exceptions.QuestionNotFoundException;
 import com.example.cursovaya2.exceptions.StorageIsEmptyException;
 import com.example.cursovaya2.model.Question;
 import com.example.cursovaya2.service.QuestionService;
-import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-@Service
 
 public class JavaQuestionService implements QuestionService {
     private Set<Question> questions = new HashSet<>();

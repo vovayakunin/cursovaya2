@@ -6,8 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Collection;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class JavaQuestionServiceTest {
     JavaQuestionService service = new JavaQuestionService();
@@ -15,13 +14,22 @@ public class JavaQuestionServiceTest {
     @Test
     void add() {
 
-        service.add(new Question("asd", "zxc"));
-        service.add(new Question("fgh", "jkl"));
+        Question q1 = new Question("asd", "zxc");
+        service.add(q1);
+        Question q2 = new Question("fgh", "jkl");
+        service.add(q2);
 
         Collection<Question> actual = service.getAll();
         assertEquals(2, actual.size());
-        assertTrue(actual.contains(new Question("asd", "zxc")));
-        assertTrue(actual.contains(new Question("fgh", "jkl")));
-    }
+        assertTrue(actual.contains(q1));
+        assertTrue(actual.contains(q2));
 
+
+        service.remove(q1);
+        assertEquals(1, actual.size());
+        assertFalse(actual.contains(q1));
+        assertTrue(actual.contains(q2));
+
+
+    }
 }
