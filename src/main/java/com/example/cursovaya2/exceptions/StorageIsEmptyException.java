@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class StorageIsEmptyException extends RuntimeException {
 
     public StorageIsEmptyException() {
+        super();
     }
 
     public StorageIsEmptyException(String message) {

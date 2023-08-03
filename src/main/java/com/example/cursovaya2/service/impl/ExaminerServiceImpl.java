@@ -4,14 +4,21 @@ import com.example.cursovaya2.exceptions.NotEnoughQuestionException;
 import com.example.cursovaya2.model.Question;
 import com.example.cursovaya2.service.ExaminerService;
 import com.example.cursovaya2.service.QuestionService;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+@Service
+
 public class ExaminerServiceImpl implements ExaminerService {
 
     private final QuestionService service;
+
+    public ExaminerServiceImpl() {
+        this(null);
+    }
 
     public ExaminerServiceImpl(QuestionService service) {
         this.service = service;

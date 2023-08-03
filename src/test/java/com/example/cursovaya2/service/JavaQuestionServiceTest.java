@@ -13,23 +13,22 @@ public class JavaQuestionServiceTest {
 
     @Test
     void add() {
-
-        Question q1 = new Question("asd", "zxc");
-        service.add(q1);
-        Question q2 = new Question("fgh", "jkl");
-        service.add(q2);
-
+        service.add(new Question("rty", "mnb"));
+        service.add(new Question("gfd", "saw"));
         Collection<Question> actual = service.getAll();
         assertEquals(2, actual.size());
-        assertTrue(actual.contains(q1));
-        assertTrue(actual.contains(q2));
+        assertTrue(actual.contains(new Question("rty", "mnb")));
+        assertTrue(actual.contains(new Question("gfd", "saw")));
+    }
 
-
+    @Test
+    void remove() {
+        Question q1 = service.add(new Question("rty", "mnb"));
+        Question q2 = service.add(new Question("gfd", "saw"));
+        Collection<Question> actual = service.getAll();
         service.remove(q1);
         assertEquals(1, actual.size());
         assertFalse(actual.contains(q1));
         assertTrue(actual.contains(q2));
-
-
     }
 }

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class NotEnoughQuestionException extends RuntimeException {
     public NotEnoughQuestionException() {
         super();
+
     }
 
     public NotEnoughQuestionException(String message) {

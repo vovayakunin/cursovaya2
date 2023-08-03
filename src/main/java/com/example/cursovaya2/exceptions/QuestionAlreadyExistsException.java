@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class QuestionAlreadyExistsException extends RuntimeException {
 
     public QuestionAlreadyExistsException() {
+        super();
     }
 
     public QuestionAlreadyExistsException(String message) {
